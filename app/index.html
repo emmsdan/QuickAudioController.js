@@ -1,0 +1,29 @@
+<app>
+  <!-- <audio src="./audio1.mp3" controls autoplay="autoplay"></audio> -->
+  <noscript> Hi, sorry, you need to enable Javascript to use this App</noscript>
+
+  <audioContainer>
+   <button onclick="audio.forward()">Fast Forward</button>
+   <button onclick="audio.backward()">Backwards</button>
+   <button onclick="audio.toggleMute()">Toggled Mute</button>
+  </audioContainer>
+  <!-- <button onclick="audio.toggled()" type="button" id="playPauseButton">
+    Play
+  </button>
+  <button onclick="audio.next()" type="button" id="playNextButton">Next</button> -->
+</app>
+<script src="audioController.js"></script>
+<script>
+ 
+  const audio = AudioController.config({
+    audioFiles: [
+      { title: "May my prayer", url: "./sample/audio1.mp3" },
+      { title: "Reckless Love", url: "./sample/audio2.mp3" },
+    ],
+  });
+  function time() { 
+   console.log(audio)
+   document.querySelector('.time').innerHTML = audio.audioPlayer.duration 
+   }
+   time()
+</script>
